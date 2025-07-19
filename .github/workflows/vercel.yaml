@@ -1,0 +1,81 @@
+name: CI/CD
+
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Project
+        run: pnpm run build
+
+  CD:
+    needs: CI
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Validate environment variables
+        run: |
+          if [ -z "${{ env.VERCEL_ORG_ID }}" ]; then
+            echo "VERCEL_ORG_ID is not set"
+            exit 1
+          fi
+          if [ -z "${{ env.VERCEL_PROJECT_ID }}" ]; then
+            echo "VERCEL_PROJECT_ID is not set"
+            exit 1
+          fi
+          if [ -z "$VERCEL_TOKEN" ]; then
+            echo "VERCEL_TOKEN is not set"
+            exit 1
+          fi
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build project
+        run: pnpm run build
+
+      - name: Deploy to Vercel
+        run: npx vercel --prod --token $VERCEL_TOKEN
