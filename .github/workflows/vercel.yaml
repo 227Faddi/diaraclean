@@ -1,4 +1,4 @@
-name: CI/CD
+name: CI/CD with Vercel
 
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
@@ -10,6 +10,8 @@ on:
     branches:
       - main
   pull_request:
+    branches:
+      - main
 
 jobs:
   CI:
@@ -20,24 +22,24 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-          
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20
-          cache: 'pnpm'
+          node-version: "20"
+
+      - name: Install pnpm
+        run: npm install -g pnpm
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build Project
-        run: pnpm run build
+      - name: Run ESLint
+        run: pnpm lint
 
-  CD:
+      - name: Build Project
+        run: pnpm build
+
+  deploy:
     needs: CI
     runs-on: ubuntu-latest
 
@@ -55,27 +57,24 @@ jobs:
             echo "VERCEL_PROJECT_ID is not set"
             exit 1
           fi
-          if [ -z "$VERCEL_TOKEN" ]; then
+          if [ -z "${{ secrets.VERCEL_TOKEN }}" ]; then
             echo "VERCEL_TOKEN is not set"
             exit 1
           fi
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20
-          cache: 'pnpm'
+
+      - name: Install pnpm
+        run: npm install -g pnpm
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
       - name: Build project
-        run: pnpm run build
+        run: pnpm build
 
       - name: Deploy to Vercel
-        run: pnpm dlx vercel --prod --token $VERCEL_TOKEN
+        run: npx vercel --prod --token ${{ env.VERCEL_TOKEN }}
