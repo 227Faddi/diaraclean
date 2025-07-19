@@ -39,7 +39,7 @@ jobs:
       - name: Build Project
         run: pnpm build
 
-  deploy:
+  CD:
     needs: CI
     runs-on: ubuntu-latest
 
