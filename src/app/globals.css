@@ -6,9 +6,18 @@
   prefersdark: false;
   color-scheme: light;
 
-  --color-base-100: #FFFFF; /* background */
-  --color-primary: #2a2a2e; /* primary */
-  --color-accent: #9a73e8; /* accent */
-  --color-base-content: #00000;
-  --color-neutral-content: #c6c6c6;
+  --color-base-100: #fefefe; /* very light background */
+  --color-base-content: #2c2c2c; /* softer black for readability */
+
+  --color-primary: #7cc6fe; /* light blue for cleanliness */
+  --color-primary-content: #ffffff;
+
+  --color-secondary: #d0f0fd; /* soft sky-blue tone */
+  --color-secondary-content: #1a1a1a;
+
+  --color-accent: #b3e5fc; /* very light accent blue */
+  --color-accent-content: #1a1a1a;
+
+  --color-neutral: #e5e7eb; /* neutral light gray */
+  --color-neutral-content: #2c2c2c;
 }

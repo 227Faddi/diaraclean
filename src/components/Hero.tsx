@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 const Hero = () => {
   return (
     <div className="hero min-h-screen">
@@ -10,17 +8,24 @@ const Hero = () => {
         />
         <div className="space-y-2">
           <p className="bg-base-200 text-white p-2 px-4 rounded-xl w-fit">
-            Professionisti delle Pulizie al Tuo Servizio
+            Servizi di pulizie a Olbie e dintorni
           </p>
-          <h1 className="text-7xl font-bold">Box Office News!</h1>
-          <p className="py-4 text-2xl">
+          <h1 className="text-2xl lg:text-7xl font-bold">
+            Pulizie per appartamenti, uffici e case vacanza
+          </h1>
+          <p className="py-4 lg:text-2xl">
             Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
             excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
             a id nisi.
           </p>
-          <button className="btn btn-primary p-6 text-2xl">
-            Prenota Adesso
-          </button>
+          <div className="flex flex-col md:flex-row items-center gap-3">
+            <button className="btn btn-primary p-6 text-2xl">
+              Prenota una pulizia
+            </button>
+            <button className="btn btn-secondary p-6 text-2xl">
+              I Nostri Servizi
+            </button>
+          </div>
         </div>
       </div>
     </div>

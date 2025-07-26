@@ -1,89 +1,62 @@
 import Image from "next/image";
+import Link from "next/link";
+import { Menu } from "lucide-react";
 
 const Navbar = () => {
   return (
-    <div className="navbar shadow-sm glass rounded-xl px-6 py-4 mx-32">
+    <nav className="fixed z-50 navbar glass rounded-xl w-fit px-4 space-x-4 md:px- md:space-x-16">
       <div className="navbar-start">
-        <a className="text-xl">
-          <div className="flex justify-center items-center gap-2">
-            <Image
-              src="/diaracleanlogo.png"
-              alt="logo"
-              width={55}
-              height={55}
-            />
-            <h3 className="text-3xl font-extrabold hidden">Diara Clean</h3>
-          </div>
-        </a>
+        <Link href="#">
+          <Image src="/diaracleanlogo.png" alt="logo" width={55} height={55} />
+        </Link>
       </div>
-      <div className="navbar-center text-4xl hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
+      <div className="navbar-center hidden lg:flex">
+        <ul className="menu menu-horizontal space-x-8 text-lg">
           <li>
-            <a>Servizi</a>
+            <Link href="#services">Servizi</Link>
           </li>
           <li>
-            <details>
-              <summary>Parent</summary>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </details>
+            <Link href="#reviews">Recensioni</Link>
           </li>
           <li>
-            <a>Item 3</a>
+            <Link href="#faq">FAQ</Link>
+          </li>
+          <li>
+            <Link href="#cta">Contatti</Link>
           </li>
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Prenota</a>
-        <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              {" "}
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h8m-8 6h16"
-              />{" "}
-            </svg>
+        <Link
+          href="#cta"
+          className="btn btn-primary rounded-xl border-none md:text-lg md:p-4"
+        >
+          Prenota
+        </Link>
+        <div className="dropdown space-x-4 lg:space-x-0">
+          <div tabIndex={0} role="button" className="lg:hidden">
+            <Menu size={30} />
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-[#2A2A2E] rounded-box z-1 mt-6 w-52 p-2 text-lg"
           >
             <li>
-              <a>Item 1</a>
+              <Link href="#services">Servizi</Link>
             </li>
             <li>
-              <a>Parent</a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
+              <Link href="#reviews">Recensioni</Link>
             </li>
             <li>
-              <a>Item 3</a>
+              <Link href="#faq">FAQ</Link>
+            </li>
+            <li>
+              <Link href="#cta">Contatti</Link>
             </li>
           </ul>
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 
