@@ -3,7 +3,7 @@ import Image from "next/image";
 const Footer = () => {
   return (
     <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content p-10 mt-32">
-      <aside>
+      <aside className="flex gap-2 items-end">
         <Image src="/diaracleanlogo.png" alt="logo" width={55} height={55} />
         <p>© 2025 Diara Clean. All Rights Reserved.</p>
       </aside>

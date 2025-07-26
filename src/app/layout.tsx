@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import { Nunito } from "next/font/google";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import type { Metadata } from "next";
+import { Nunito } from "next/font/google";
+import "./globals.css";
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" data-theme="themelight">
       <body className={`${nunito.className} antialiased relative`}>
-        <div className="min-h-screen flex flex-col items-center p-6 bg-base-100">
+        <div className="min-h-screen flex flex-col items-center p-4 md:p-6 bg-base-100">
           <Navbar />
           {children}
         </div>
