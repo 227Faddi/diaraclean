@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Nunito } from "next/font/google";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const nunito = Nunito({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-nunito",
 });
 
 export const metadata: Metadata = {
@@ -23,11 +21,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang="en" className="scroll-smooth" data-theme="themelight">
+      <body className={`${nunito.className} antialiased relative`}>
+        <div className="min-h-screen flex flex-col items-center p-6 bg-base-100">
+          <Navbar />
+          {children}
+        </div>
+        <Footer />
       </body>
     </html>
   );
