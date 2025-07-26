@@ -44,9 +44,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
       - name: Validate environment variables
         run: |
           if [ -z "${{ env.VERCEL_ORG_ID }}" ]; then
@@ -61,6 +58,9 @@ jobs:
             echo "VERCEL_TOKEN is not set"
             exit 1
           fi
+
+      - name: Checkout code
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -77,4 +77,9 @@ jobs:
         run: pnpm build
 
       - name: Deploy to Vercel
-        run: npx vercel --prod --token ${{ env.VERCEL_TOKEN }}
+        run: |
+          if [ "${{ github.ref }}" = "refs/heads/main" ] && [ "${{ github.event_name }}" = "push" ]; then
+            npx vercel --prod --token $VERCEL_TOKEN
+          else
+            npx vercel --token $VERCEL_TOKEN
+          fi
