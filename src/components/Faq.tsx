@@ -2,34 +2,42 @@ const Faq = () => {
   return (
     <section id="faq" className="py-32">
       <h2 className="text-5xl text-center mb-24">FAQ</h2>
-      <div>
-        <div className="collapse collapse-arrow bg-base-100 border border-base-300">
+      <div className="bg-primary text-primary-content rounded-xl p-4 lg:p-6 lg:text-xl space-y-6">
+        <div className="collapse collapse-arrow">
           <input type="radio" name="my-accordion-2" defaultChecked />
-          <div className="collapse-title font-semibold">
-            How do I create an account?
+          <div className="collapse-title font-semibold lg:text-2xl">
+            Posso prenotare online?
           </div>
-          <div className="collapse-content text-sm">
-            Click the button in the top right corner and follow the registration
-            process.
-          </div>
-        </div>
-        <div className="collapse collapse-arrow bg-base-100 border border-base-300">
-          <input type="radio" name="my-accordion-2" />
-          <div className="collapse-title font-semibold">
-            I forgot my password. What should I do?
-          </div>
-          <div className="collapse-content text-sm">
-            Click on on the login page and follow the instructions sent to your
-            email.
+          <div className="collapse-content text-sm lg:text-lg">
+            Sì, puoi usare il nostro modulo di contatto oppure scriverci su
+            WhatsApp.
           </div>
         </div>
-        <div className="collapse collapse-arrow bg-base-100 border border-base-300">
+        <div className="collapse collapse-arrow">
           <input type="radio" name="my-accordion-2" />
-          <div className="collapse-title font-semibold">
-            How do I update my profile information?
+          <div className="collapse-title font-semibold lg:text-2xl">
+            Portate voi i prodotti per la pulizia?
           </div>
-          <div className="collapse-content text-sm">
-            Go to settings and select Edit Profile to make changes.
+          <div className="collapse-content text-sm lg:text-lg">
+            Certo! Usiamo prodotti professionali ed ecologici.
+          </div>
+        </div>
+        <div className="collapse collapse-arrow">
+          <input type="radio" name="my-accordion-2" />
+          <div className="collapse-title font-semibold lg:text-2xl">
+            Fate pulizie nei weekend o festivi?
+          </div>
+          <div className="collapse-content text-sm lg:text-lg">
+            Sì, su richiesta, con un piccolo supplemento.
+          </div>
+        </div>
+        <div className="collapse collapse-arrow">
+          <input type="radio" name="my-accordion-2" />
+          <div className="collapse-title font-semibold lg:text-2xl">
+            Offrite abbonamenti o sconti periodici?
+          </div>
+          <div className="collapse-content text-sm lg:text-lg">
+            Sì, contattaci per soluzioni personalizzate.
           </div>
         </div>
       </div>

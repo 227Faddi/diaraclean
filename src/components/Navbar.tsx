@@ -24,19 +24,27 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-6 w-52 p-2 text-lg right-0"
+              className="menu menu-sm dropdown-content bg-base-100 border border-neutral rounded-xl z-[1] mt-8 p-4 right-0"
             >
               <li>
-                <Link href="#services">Servizi</Link>
+                <Link href="#services" className="text-lg">
+                  Servizi
+                </Link>
               </li>
               <li>
-                <Link href="#reviews">Recensioni</Link>
+                <Link href="#reviews" className="text-lg">
+                  Recensioni
+                </Link>
               </li>
               <li>
-                <Link href="#faq">FAQ</Link>
+                <Link href="#faq" className="text-lg">
+                  FAQ
+                </Link>
               </li>
               <li>
-                <Link href="#cta">Contatti</Link>
+                <Link href="#cta" className="text-lg">
+                  Contatti
+                </Link>
               </li>
             </ul>
           </div>
