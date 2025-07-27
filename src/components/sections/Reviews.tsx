@@ -1,5 +1,4 @@
 import { BadgeCheck, Clock3, Leaf } from "lucide-react";
-import Link from "next/link";
 import BottomWaveDivider from "../ui/BottomWaveDivider";
 import InfoCard from "../ui/InfoCard";
 import TopWaveDivider from "../ui/TopWaveDivider";
@@ -41,12 +40,6 @@ const Reviews = () => {
             />
           ))}
         </div>
-        <Link
-          href=""
-          className="my-24 btn btn-secondary text-4xl p-8 rounded-xl"
-        >
-          Prenota Adesso
-        </Link>
       </div>
       <BottomWaveDivider />
     </section>
