@@ -25,7 +25,7 @@ const Info = () => {
   return (
     <section
       id="info"
-      className="py-32 px-4 lg:px-6 bg-neutral w-full relative"
+      className="py-32 px-2 sm:px-6 bg-neutral w-full relative"
     >
       <TopWaveDivider />
       <h2 className="text-5xl text-center mb-24">Perché scegliere noi?</h2>

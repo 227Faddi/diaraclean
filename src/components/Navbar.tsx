@@ -23,10 +23,10 @@ const Navbar = () => {
     <>
       <div
         className={
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/80 shadow-md backdrop-blur-sm"
+          "fixed top-0 left-0 right-0 z-50 bg-white/70 shadow-md backdrop-blur-sm"
         }
       >
-        <nav className="container mx-auto px-6 py-3">
+        <nav className="mx-auto px-2 sm:px-6 py-3">
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center">
               <Image

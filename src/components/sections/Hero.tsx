@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <div className="hero min-h-screen px-4 lg:px-6 mt-28">
+    <div className="hero min-h-screen px-2 sm:px-6 mt-24">
       <div className="hero-content flex-col lg:flex-row-reverse gap-8">
         <picture className="lg:max-w-xl lg:w-1/2">
           <img
@@ -23,10 +23,16 @@ const Hero = () => {
             a id nisi.
           </p>
           <div className="flex flex-col md:flex-row items-center gap-3">
-            <Link href="u" className="btn btn-primary p-6 text-2xl">
+            <Link
+              href="#"
+              className="btn bg-gray-800 hover:bg-gray-950 rounded-full px-8 py-6 lg:text-lg text-white min-w-48"
+            >
               Prenota una pulizia
             </Link>
-            <Link href="#services" className="btn btn-secondary p-6 text-2xl">
+            <Link
+              href="#services"
+              className="btn bg-gray-800 hover:bg-gray-950 rounded-full px-8 py-6 lg:text-lg text-white min-w-48"
+            >
               I Nostri Servizi
             </Link>
           </div>

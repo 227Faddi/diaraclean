@@ -25,7 +25,7 @@ const Reviews = () => {
   return (
     <section
       id="reviews"
-      className="py-32 px-4 lg:px-6 bg-primary w-full relative"
+      className="py-32 px-2 sm:px-6 bg-primary w-full relative"
     >
       <TopWaveDivider />
       <div className="flex flex-col justify-center items-center">

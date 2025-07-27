@@ -15,7 +15,7 @@ const Footer = () => {
 
   return (
     <footer id="footer" className="bg-gray-800 text-white pt-16 mt-32 pb-8">
-      <div className="container mx-auto px-6 lg:px-8">
+      <div className="container mx-auto px-2">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-10">
           <div className="flex flex-col items-center md:items-start">
             <Link href="/" className="flex items-center mb-4">

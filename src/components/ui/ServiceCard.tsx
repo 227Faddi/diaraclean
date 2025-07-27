@@ -10,7 +10,7 @@ const ServiceCard = ({ image, title }: Props) => {
       <div className="absolute inset-0 bg-opacity-50 flex flex-col justify-end p-6">
         <a
           href="#contact"
-          className="text-2xl font-bold rounded-3xl w-fit text-white hover:bg-primary-focus transition-all duration-300 no-underline"
+          className="text-2xl font-bold hidden sm:inline-block text-white hover:bg-primary-focus transition-all duration-300 no-underline"
         >
           {title}
         </a>

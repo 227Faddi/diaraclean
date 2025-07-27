@@ -3,9 +3,9 @@ import Link from "next/link";
 
 const CTA = () => {
   return (
-    <section id="cta" className="py-32 px-4 lg:px-6">
-      <div className="bg-gradient-to-br from-primary to-secondary text-white rounded-3xl p-12">
-        <div className="relative z-10 container mx-auto px-6 lg:px-8 text-center">
+    <section id="cta" className="py-32 px-2 sm:px-6">
+      <div className="bg-gradient-to-br from-primary to-secondary text-white rounded-3xl p-6 lg:p-12">
+        <div className="relative container mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-800">
             Pronto a Vivere in un Ambiente più Pulito?
           </h2>
