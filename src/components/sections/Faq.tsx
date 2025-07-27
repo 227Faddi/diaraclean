@@ -1,8 +1,8 @@
 const Faq = () => {
   return (
-    <section id="faq" className="py-32">
+    <section id="faq" className="py-32 px-4 lg:px-6">
       <h2 className="text-5xl text-center mb-24">FAQ</h2>
-      <div className="bg-primary text-primary-content rounded-xl p-4 lg:p-6 lg:text-xl space-y-6">
+      <div className="bg-primary text-primary-content rounded-xl p-4 lg:p-6 lg:text-xl">
         <div className="collapse collapse-arrow">
           <input type="radio" name="my-accordion-2" defaultChecked />
           <div className="collapse-title font-semibold lg:text-2xl">
@@ -13,6 +13,7 @@ const Faq = () => {
             WhatsApp.
           </div>
         </div>
+        <div className="divider mx-0 divider-secondary"></div>
         <div className="collapse collapse-arrow">
           <input type="radio" name="my-accordion-2" />
           <div className="collapse-title font-semibold lg:text-2xl">
@@ -22,6 +23,7 @@ const Faq = () => {
             Certo! Usiamo prodotti professionali ed ecologici.
           </div>
         </div>
+        <div className="divider mx-0 divider-secondary"></div>
         <div className="collapse collapse-arrow">
           <input type="radio" name="my-accordion-2" />
           <div className="collapse-title font-semibold lg:text-2xl">
@@ -31,6 +33,7 @@ const Faq = () => {
             Sì, su richiesta, con un piccolo supplemento.
           </div>
         </div>
+        <div className="divider mx-0 divider-secondary"></div>
         <div className="collapse collapse-arrow">
           <input type="radio" name="my-accordion-2" />
           <div className="collapse-title font-semibold lg:text-2xl">

@@ -1,11 +1,9 @@
-import CTA from "@/components/CTA";
-import Faq from "@/components/Faq";
-import Footer from "@/components/Footer";
-import Hero from "@/components/Hero";
-import Info from "@/components/Info";
-import Reviews from "@/components/Reviews";
-import Services from "@/components/Services";
-import Image from "next/image";
+import CTA from "@/components/sections/CTA";
+import Faq from "@/components/sections/Faq";
+import Hero from "@/components/sections/Hero";
+import Info from "@/components/sections/Info";
+import Reviews from "@/components/sections/Reviews";
+import Services from "@/components/sections/Services";
 
 export default function Home() {
   return (
