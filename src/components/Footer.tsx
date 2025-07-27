@@ -3,53 +3,59 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Footer = () => {
+  const contactInfo = [
+    { icon: <MapPin />, text: "Olbia, Sardegna, Italia" },
+    { icon: <Phone />, text: "+39 123 456 7890", href: "tel:+391234567890" },
+    {
+      icon: <Mail />,
+      text: "info@diaraclean.com",
+      href: "mailto:info@diaraclean.com",
+    },
+  ];
+
   return (
-    <footer
-      id="footer"
-      className="p-8 md:px-14 mt-36 gap-18 md:gap-6 text-center bg-primary text-primary-content rounded-t-3xl"
-    >
-      <div className="w-full flex flex-col md:flex-row justify-between items-center">
-        <div className="flex-1">
-          <Image src="/diaracleanlogo.png" alt="logo" width={90} height={90} />
-        </div>
-        <div className="flex-1 order-3 md:order-2 text-center md:self-end">
-          <p>© 2025 Diara Clean - Tutti i diritti riservati.</p>
-        </div>
-        <div className="flex-1 order-2 md:order-3 flex justify-end">
-          <ul className="flex flex-col justify-center items-start gap-3">
-            <li>
-              <Link
-                href="#"
-                className="flex items-center justify-center text-lg lg:text-xl"
-              >
-                <MapPin size={25} />
-                <div className="divider divider-horizontal mx-0 divider-secondary"></div>
-                <p>Olbia</p>
-              </Link>
-            </li>
+    <footer id="footer" className="bg-gray-800 text-white pt-16 pb-8">
+      <div className="container mx-auto px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-10">
+          <div className="flex flex-col items-center md:items-start">
+            <Link href="/" className="flex items-center mb-4">
+              <Image
+                src="/diaracleanlogo.png"
+                alt="diaraclean Logo"
+                width={60}
+                height={60}
+                className="mr-3"
+              />
+              <span className="text-2xl font-bold">DiaraClean</span>
+            </Link>
+            <p className="text-gray-400 text-center md:text-left">
+              Pulizia professionale per la tua casa e il tuo business.
+            </p>
+          </div>
 
-            <li>
-              <Link
-                href="#"
-                className="flex items-center justify-center text-lg lg:text-xl"
-              >
-                <Phone size={25} />
-                <div className="divider divider-horizontal mx-0 divider-secondary"></div>
-                <p>(438) 500-2723</p>
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                href="#"
-                className="flex items-center justify-center text-lg lg:text-xl"
-              >
-                <Mail size={25} />
-                <div className="divider divider-horizontal mx-0 divider-secondary"></div>
-                <p>info@diaraclean.com</p>
-              </Link>
-            </li>
-          </ul>
+          <div className="flex flex-col items-center md:items-end">
+            <h4 className="text-xl font-semibold mb-4">Contatti</h4>
+            <ul className="space-y-3">
+              {contactInfo.map((item, index) => (
+                <li key={index} className="flex items-center">
+                  {item.icon}
+                  {item.href ? (
+                    <Link
+                      href={item.href}
+                      className="ml-3 text-gray-300 hover:text-white"
+                    >
+                      {item.text}
+                    </Link>
+                  ) : (
+                    <span className="ml-3 text-gray-300">{item.text}</span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <div className="border-t border-gray-700 pt-6 text-center text-gray-500">
+          <p>&copy; 2025 Diaraclean. Tutti i diritti riservati.</p>
         </div>
       </div>
     </footer>
