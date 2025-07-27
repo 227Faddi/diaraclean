@@ -1,3 +1,6 @@
+import { PhoneOutgoing } from "lucide-react";
+import Link from "next/link";
+
 type Props = {
   image: string;
   title: string;
@@ -5,19 +8,23 @@ type Props = {
 
 const ServiceCard = ({ image, title }: Props) => {
   return (
-    <div className="relative bg-base-100 rounded-2xl shadow-lg overflow-hidden group">
+    <div className="relative bg-base-100 rounded-2xl shadow-2xl overflow-hidden group">
       <img src={image} alt={title} className="w-full h-80 object-cover" />
-      <div className="absolute inset-0 bg-opacity-50 flex flex-col justify-end p-6">
-        <a
-          href="#contact"
-          className="text-2xl font-bold hidden sm:inline-block text-white hover:bg-primary-focus transition-all duration-300 no-underline"
+      <div className="absolute inset-0 bg-opacity-50 flex items-end justify-between p-6 z-10 text-white">
+        <div>
+          <h4 className="text-2xl font-bold hover:bg-primary-focus transition-all duration-300 no-underline">
+            {title}
+          </h4>
+          <p className="text-base-content">{title}</p>
+        </div>
+        <Link
+          href="https://wa.me/393520129432"
+          className="hidden group-hover:inline-block"
         >
-          {title}
-        </a>
+          <PhoneOutgoing size={35} />
+        </Link>
       </div>
-      <div className="p-4 sm:hidden">
-        <h3 className="text-xl font-bold text-base-content">{title}</h3>
-      </div>
+      <div className="absolute inset-x-0 bottom-0 h-full bg-gradient-to-t from-primary to-transparent"></div>
     </div>
   );
 };

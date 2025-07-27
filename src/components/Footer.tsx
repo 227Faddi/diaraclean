@@ -34,10 +34,10 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col items-center md:items-end">
-            <h4 className="text-xl font-semibold mb-4">Contatti</h4>
+            <h4 className="text-xl font-semibold mb-4 text-left">Contatti</h4>
             <ul className="space-y-3">
               {contactInfo.map((item, index) => (
-                <li key={index} className="flex items-center">
+                <li key={index} className="flex items-center justify-between">
                   {item.icon}
                   {item.href ? (
                     <Link

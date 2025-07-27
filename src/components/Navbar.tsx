@@ -97,7 +97,7 @@ const Navbar = () => {
             ))}
           </ul>
           <Link
-            href="#cta"
+            href="https://wa.me/393520129432"
             onClick={toggleMenu}
             className="btn btn-primary rounded-full px-8 mt-12 text-lg text-white"
           >

@@ -29,7 +29,15 @@ const Reviews = () => {
     >
       <TopWaveDivider />
       <div className="flex flex-col justify-center items-center">
-        <h2 className="text-5xl mb-24">Cosa dicono i nostri clienti</h2>
+        <div className="text-center mb-24">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-base-content mb-4">
+            I Nostri Servizi di Pulizia
+          </h2>
+          <p className="text-lg text-base-content max-w-2xl mx-auto">
+            Soluzioni complete per ogni esigenza, dalla pulizia ordinaria a
+            quella straordinaria.
+          </p>
+        </div>
         <div className="flex flex-col justify-center items-center md:flex-row gap-8 p-8">
           {info.map((item, index) => (
             <InfoCard
