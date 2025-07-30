@@ -38,7 +38,7 @@ const Info = () => {
             quella straordinaria.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6 lg:gap-16 place-items-center">
           {info.map((item, index) => (
             <InfoCard
               key={index}

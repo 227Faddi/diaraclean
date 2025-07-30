@@ -4,13 +4,13 @@ import Link from "next/link";
 
 const Footer = () => {
   const contactInfo = [
-    { icon: <MapPin />, text: "Olbia, Sardegna, Italia" },
     { icon: <Phone />, text: "+39 123 456 7890", href: "tel:+391234567890" },
     {
       icon: <Mail />,
       text: "info@diaraclean.com",
       href: "mailto:info@diaraclean.com",
     },
+    { icon: <MapPin />, text: "Olbia & Costa Smeralda" },
   ];
 
   return (
@@ -42,7 +42,7 @@ const Footer = () => {
                   {item.href ? (
                     <Link
                       href={item.href}
-                      className="ml-3 text-gray-300 hover:text-white"
+                      className="ml-3 text-gray-300 hover:text-white hover:underline"
                     >
                       {item.text}
                     </Link>
@@ -54,8 +54,16 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="border-t border-gray-700 pt-6 text-center text-gray-500">
-          <p>&copy; 2025 Diaraclean. Tutti i diritti riservati.</p>
+        <div className="border-t border-gray-700 pt-6 text-center text-gray-400">
+          <p>
+            &copy; 2025 Diaraclean. Tutti i diritti riservati. Realizzato da{" "}
+            <a
+              href="https://www.faliloukhouma.com"
+              className="underline hover:text-gray-500"
+            >
+              Falilou
+            </a>
+          </p>
         </div>
       </div>
     </footer>

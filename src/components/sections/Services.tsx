@@ -36,7 +36,7 @@ const Services = () => {
             quella straordinaria.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12 place-items-center">
           {services.map((service, index) => (
             <ServiceCard
               key={index}

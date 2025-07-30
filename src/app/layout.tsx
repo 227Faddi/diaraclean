@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" data-theme="themelight">
       <body className={`${nunito.className} antialiased relative`}>
-        <div className="min-h-screen flex flex-col items-center bg-base-100">
+        <div className="flex flex-col items-center bg-base-100">
           <Navbar />
           {children}
         </div>
