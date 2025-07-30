@@ -1,5 +1,6 @@
 "use client";
 
+import { DATA } from "@/data";
 import { Mail, MapPin, Menu, Phone, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,31 +16,31 @@ const Navbar = () => {
   const contactInfo = [
     {
       icon: <Phone size={16} />,
-      text: "+39 123 456 7890",
-      href: "tel:+391234567890",
+      text: DATA.phone,
+      href: DATA.phoneHref,
     },
     {
       icon: <Mail size={16} />,
-      text: "info@diaraclean.com",
-      href: "mailto:info@diaraclean.com",
+      text: DATA.email,
+      href: DATA.emailHref,
     },
-    { icon: <MapPin size={16} />, text: "Olbia, IT" },
+    { icon: <MapPin size={16} />, text: DATA.location },
   ];
 
   const navLinks = [
     { href: "#services", label: "Servizi" },
-    { href: "#reviews", label: "Recensioni" },
+    // { href: "#reviews", label: "Recensioni" },
     { href: "#faq", label: "FAQ" },
     { href: "#cta", label: "Contatti" },
   ];
 
   return (
     <>
-      <div className="w-full hidden md:block bg-primary text-white py-2 text-md">
+      <div className="w-full hidden md:block bg-primary text-white py-2 lg:text-lg">
         <div className="container mx-auto px-4 md:px-16 flex justify-center items-center">
           <ul className="flex gap-8 items-center">
             {contactInfo.map((item, index) => (
-              <li className="flex items-center space-x-2 text-lg" key={index}>
+              <li className="flex items-center space-x-2" key={index}>
                 {item.icon}
                 {item.href ? (
                   <Link href={item.href} className="space-x-2 hover:underline">
@@ -64,7 +65,7 @@ const Navbar = () => {
         <nav className="px-6 sm:px-16 md:px-8 2xl:px-24 py-4 flex justify-center items-center">
           <div className="container w-full flex items-center justify-between mx-auto">
             <div className="md:hidden">
-              <Link href="tel:+393510129432">
+              <Link href={DATA.phone}>
                 <WhatsAppIcon />
               </Link>
             </div>
@@ -76,20 +77,20 @@ const Navbar = () => {
                   width={55}
                   height={55}
                 />
-                <span className="hidden md:block text-2xl font-bold text-gray-600">
+                <span className="hidden md:block text-xl lg:text-2xl font-bold text-gray-600">
                   DiaraClean
                 </span>
               </Link>
             </div>
 
             {/* Desktop Menu */}
-            <div className="hidden md:flex items-center space-x-8">
-              <ul className="flex items-center space-x-8">
+            <div className="hidden md:flex items-center space-x-12 2xl:space-x-20">
+              <ul className="flex items-center space-x-8 2xl:space-x-12">
                 {navLinks.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-gray-600 hover:text-primary transition-colors duration-300"
+                      className="text-gray-600 hover:text-primary transition-colors duration-300 lg:text-md"
                     >
                       {link.label}
                     </Link>
@@ -97,8 +98,8 @@ const Navbar = () => {
                 ))}
               </ul>
               <Link
-                href="#cta"
-                className="btn btn-primary rounded-full px-6 text-white"
+                href={DATA.whatsApp}
+                className="btn btn-primary rounded-full px-6 text-white lg:text-xl"
               >
                 Prenota Ora
               </Link>
@@ -130,7 +131,7 @@ const Navbar = () => {
                 <Link
                   href={link.href}
                   onClick={toggleMenu}
-                  className="text-2xl text-gray-800 hover:text-primary transition-colors duration-300"
+                  className="text-gray-800 hover:text-primary transition-colors duration-300"
                 >
                   {link.label}
                 </Link>
@@ -138,9 +139,9 @@ const Navbar = () => {
             ))}
           </ul>
           <Link
-            href="https://wa.me/393520129432"
+            href={DATA.whatsApp}
             onClick={toggleMenu}
-            className="btn btn-primary rounded-full px-8 mt-12 text-lg text-white"
+            className="btn btn-primary rounded-full px-8 mt-12 text-white"
           >
             Prenota Ora
           </Link>
@@ -178,9 +179,9 @@ const WhatsAppIcon = () => {
       ></path>
       <path
         fill="#fff"
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M19.268,16.045c-0.355-0.79-0.729-0.806-1.068-0.82c-0.277-0.012-0.593-0.011-0.909-0.011c-0.316,0-0.83,0.119-1.265,0.594c-0.435,0.475-1.661,1.622-1.661,3.956c0,2.334,1.7,4.59,1.937,4.906c0.237,0.316,3.282,5.259,8.104,7.161c4.007,1.58,4.823,1.266,5.693,1.187c0.87-0.079,2.807-1.147,3.202-2.255c0.395-1.108,0.395-2.057,0.277-2.255c-0.119-0.198-0.435-0.316-0.909-0.554s-2.807-1.385-3.242-1.543c-0.435-0.158-0.751-0.237-1.068,0.238c-0.316,0.474-1.225,1.543-1.502,1.859c-0.277,0.317-0.554,0.357-1.028,0.119c-0.474-0.238-2.002-0.738-3.815-2.354c-1.41-1.257-2.362-2.81-2.639-3.285c-0.277-0.474-0.03-0.731,0.208-0.968c0.213-0.213,0.474-0.554,0.712-0.831c0.237-0.277,0.316-0.475,0.474-0.791c0.158-0.317,0.079-0.594-0.04-0.831C20.612,19.329,19.69,16.983,19.268,16.045z"
-        clip-rule="evenodd"
+        clipRule="evenodd"
       ></path>
     </svg>
   );

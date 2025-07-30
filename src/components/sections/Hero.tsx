@@ -1,37 +1,38 @@
+import { DATA } from "@/data";
+import Image from "next/image";
 import Link from "next/link";
-
 const Hero = () => {
   return (
-    <div className="hero min-h-screen px-2 sm:px-6">
-      <div className="hero-content flex-col lg:flex-row-reverse gap-8">
-        <picture className="lg:max-w-xl lg:w-1/2">
-          <img
-            src="https://placehold.co/900x700"
-            className="w-full rounded-lg shadow-2xl"
+    <div className="flex justify-center min-h-screen px-2 sm:px-6">
+      <div className="hero-content flex-col lg:flex-row-reverse gap-8 justify-center items-center">
+        <picture className="hidden lg:block lg:flex-1 w-full relative h-2/3 max-h-[800px] rounded-3xl border-4 border-secondary overflow-hidden">
+          <Image
+            fill
+            src="/hero.jpg"
+            className="w-full h-full object-cover"
+            alt={""}
           />
         </picture>
-        <div className="space-y-2">
-          <p className="bg-neutral text-base-content p-2 px-4 rounded-xl w-fit">
-            Servizi di pulizie a Olbia e dintorni
-          </p>
-          <h1 className="text-2xl lg:text-7xl font-bold">
-            Pulizie per appartamenti, uffici e case vacanza
-          </h1>
-          <p className="py-4 lg:text-2xl">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
-          </p>
+        <div className="flex-1 flex flex-col justify-center gap-4 sm:px-6 md:px-14 lg:px-0">
+          <div className="space-y-2 text-center md:text-left">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
+              Pulizie per appartamenti, uffici e case vacanza
+            </h1>
+            <p className="py-4 text-lg lg:text-2xl">
+              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
+              excepturi exercitationem quasi.
+            </p>
+          </div>
           <div className="flex flex-col md:flex-row items-center gap-3">
             <Link
-              href="#"
-              className="btn bg-gray-800 hover:bg-gray-950 rounded-full px-8 py-6 lg:text-lg text-white min-w-48"
+              href={DATA.whatsApp}
+              className="btn btn-primary rounded-full px-8 py-6 text-white text-lg lg:text-xl min-w-48 shadow-none"
             >
               Prenota una pulizia
             </Link>
             <Link
               href="#services"
-              className="btn bg-gray-800 hover:bg-gray-950 rounded-full px-8 py-6 lg:text-lg text-white min-w-48"
+              className="btn bg-white border-primary text-primary hover:bg-gray-50 shadow-none rounded-full px-8 py-6 text-lg lg:text-xl min-w-48"
             >
               I Nostri Servizi
             </Link>

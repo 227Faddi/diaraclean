@@ -4,13 +4,13 @@ import Link from "next/link";
 
 const Footer = () => {
   const contactInfo = [
-    { icon: <MapPin />, text: "Olbia, Sardegna, Italia" },
     { icon: <Phone />, text: "+39 123 456 7890", href: "tel:+391234567890" },
     {
       icon: <Mail />,
       text: "info@diaraclean.com",
       href: "mailto:info@diaraclean.com",
     },
+    { icon: <MapPin />, text: "Olbia & Costa Smeralda" },
   ];
 
   return (
