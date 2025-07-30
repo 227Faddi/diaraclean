@@ -14,10 +14,10 @@ const InfoCard = ({ icon, title, body }: Props) => {
           {icon}
         </div>
         <div className="flex flex-col items-center justify-center gap-2 flex-1">
-          <h3 className="card-title text-3xl text-gray-800 whitespace-pre-line">
+          <h3 className="card-title text-xl lg:text-3xl text-gray-800 whitespace-pre-line">
             {title}
           </h3>
-          <p className="text-xl">{body}</p>
+          <p className="text-md lg:text-xl">{body}</p>
         </div>
       </div>
     </div>
