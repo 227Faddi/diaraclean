@@ -25,20 +25,20 @@ const Reviews = () => {
   return (
     <section
       id="reviews"
-      className="py-32 px-2 sm:px-6 bg-primary w-full relative"
+      className="py-20 md:py-32 px-4 sm:px-6 bg-primary w-full relative"
     >
       <TopWaveDivider />
       <div className="flex flex-col justify-center items-center">
-        <div className="text-center mb-24">
+        <div className="text-center mb-16 md:mb-24">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-base-content mb-4">
             I Nostri Servizi di Pulizia
           </h2>
-          <p className="text-lg text-base-content max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-base-content max-w-2xl mx-auto">
             Soluzioni complete per ogni esigenza, dalla pulizia ordinaria a
             quella straordinaria.
           </p>
         </div>
-        <div className="flex flex-col justify-center items-center md:flex-row gap-8 p-8">
+        <div className="flex flex-col justify-center items-center md:flex-row gap-8 md:gap-12 p-4 md:p-8">
           {info.map((item, index) => (
             <InfoCard
               key={index}

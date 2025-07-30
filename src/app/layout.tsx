@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import { myMetadata } from "@/data";
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import "./globals.css";
@@ -10,10 +11,7 @@ const nunito = Nunito({
   variable: "--font-nunito",
 });
 
-export const metadata: Metadata = {
-  title: "Diara Clean - Servizi di Pulizia",
-  description: "Servizi di Pulizia a Olbia e Costa Smeralda",
-};
+export const metadata: Metadata = myMetadata;
 
 export default function RootLayout({
   children,
